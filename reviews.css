@@ -1,0 +1,144 @@
+.danh-gia-container {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 850px;
+    margin: 60px auto;
+    padding: 30px 40px;
+    background-color: #1a1a1a; /* Một màu đen nhẹ, không quá gắt */
+    color: #e0e0e0;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+.danh-gia-container h2,
+.danh-gia-container h3 {
+    color: #ffffff;
+    font-weight: 600;
+    border-bottom: 1px solid #444;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+/* Phần tổng quan đánh giá */
+.danh-gia-tong-quan {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1em;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.sao-trung-binh {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #FFD600; /* Màu vàng cho sao */
+}
+
+/* Danh sách các bình luận */
+.danh-sach-binh-luan {
+    margin-top: 20px;
+}
+
+.binh-luan {
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+}
+
+/* Xóa đường kẻ của bình luận cuối cùng */
+.binh-luan:last-child {
+    border-bottom: none;
+}
+
+.binh-luan .ten {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #fff;
+    margin: 0 0 5px 0;
+}
+
+.binh-luan .sao {
+    color: #FFD600;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.binh-luan .noi-dung {
+    line-height: 1.6;
+    color: #c5c5c5;
+    margin-bottom: 10px;
+}
+
+.binh-luan .ngay {
+    font-size: 0.85em;
+    color: #777;
+}
+
+/* Form gửi đánh giá */
+.form-danh-gia {
+    margin-top: 40px;
+}
+
+.form-danh-gia input[type="text"],
+.form-danh-gia textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background-color: #252525;
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-danh-gia input[type="text"]:focus,
+.form-danh-gia textarea:focus {
+    outline: none;
+    border-color: #f0ad4e; /* Màu nhấn khi focus */
+    box-shadow: 0 0 5px rgba(240, 173, 78, 0.5);
+}
+
+.form-danh-gia button {
+    background-color: #e0e0e0;
+    color: #111;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.form-danh-gia button:hover {
+    background-color: #ffffff;
+}
+
+/* Hệ thống chọn sao bằng CSS */
+.form-danh-gia .rating {
+    display: flex;
+    flex-direction: row-reverse; /* Đảo ngược để logic :hover hoạt động đúng */
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.form-danh-gia .rating > input {
+    display: none; /* Ẩn radio button */
+}
+
+.form-danh-gia .rating > label {
+    position: relative;
+    width: 1.5em; /* Tăng kích thước khu vực click */
+    font-size: 2rem;
+    color: #555; /* Màu sao mặc định */
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+/* Logic đổi màu khi hover và chọn */
+.form-danh-gia .rating > label:hover,
+.form-danh-gia .rating > label:hover ~ label,
+.form-danh-gia .rating > input:checked ~ label {
+    color: #FFD600; /* Màu vàng khi hover hoặc được chọn */
+}
